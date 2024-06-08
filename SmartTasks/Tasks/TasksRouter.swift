@@ -13,7 +13,7 @@ struct TasksRouter: TasksRouterProtocol {
     
     var interactor = TasksInteractor()
     var presenter = TasksPresenter()
-    var router = TasksRouter()
+    let router = TasksRouter()
     presenter.view = tasksViewController
     interactor.presenter = presenter
     tasksViewController.interactor = interactor

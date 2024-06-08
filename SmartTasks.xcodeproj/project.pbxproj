@@ -30,6 +30,7 @@
 		BA02D54B2C14EE42002C1D56 /* TasksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02D5492C14EE42002C1D56 /* TasksResponse.swift */; };
 		BA02D54D2C14EE67002C1D56 /* TasksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02D54C2C14EE67002C1D56 /* TasksPresenter.swift */; };
 		BA02D54F2C14F037002C1D56 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02D54E2C14F037002C1D56 /* TaskViewModel.swift */; };
+		BA8A75992C14FB2E007A7599 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A75982C14FB2E007A7599 /* CustomLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		BA02D5492C14EE42002C1D56 /* TasksResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksResponse.swift; sourceTree = "<group>"; };
 		BA02D54C2C14EE67002C1D56 /* TasksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPresenter.swift; sourceTree = "<group>"; };
 		BA02D54E2C14F037002C1D56 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		BA8A75982C14FB2E007A7599 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		C0DC3FF0554C3E39D9BD6850 /* Pods_SmartTasks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartTasks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0C50D403BB406F3981A0A94 /* Pods-SmartTasks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartTasks.debug.xcconfig"; path = "Target Support Files/Pods-SmartTasks/Pods-SmartTasks.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -243,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				BA02D53C2C14CA18002C1D56 /* TaskTableViewCell.swift */,
+				BA8A75982C14FB2E007A7599 /* CustomLabel.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA02D53D2C14CA18002C1D56 /* TaskTableViewCell.swift in Sources */,
+				BA8A75992C14FB2E007A7599 /* CustomLabel.swift in Sources */,
 				BA02D54F2C14F037002C1D56 /* TaskViewModel.swift in Sources */,
 				BA02D54B2C14EE42002C1D56 /* TasksResponse.swift in Sources */,
 				BA02D53F2C14D420002C1D56 /* TasksInteractor.swift in Sources */,
