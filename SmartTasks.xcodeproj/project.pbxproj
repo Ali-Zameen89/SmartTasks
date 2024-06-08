@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18BBDBB9B07CE6BBAAEC3316 /* Pods_SmartTasks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0DC3FF0554C3E39D9BD6850 /* Pods_SmartTasks.framework */; };
+		9FB982F69E8817907C575DFB /* Pods_SmartTasks_SmartTasksUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A1431DACECC56F4D24704C /* Pods_SmartTasks_SmartTasksUITests.framework */; };
+		B10CC5E7CD799DA62696A4C2 /* Pods_SmartTasksTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22835CE5B983376DBAB853E7 /* Pods_SmartTasksTests.framework */; };
 		BA02D4F62C14A2FE002C1D56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02D4F52C14A2FE002C1D56 /* AppDelegate.swift */; };
 		BA02D4FF2C14A2FF002C1D56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA02D4FE2C14A2FF002C1D56 /* Assets.xcassets */; };
 		BA02D5022C14A2FF002C1D56 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BA02D5012C14A2FF002C1D56 /* Base */; };
@@ -18,6 +21,15 @@
 		BA02D5302C14B953002C1D56 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02D52F2C14B953002C1D56 /* TasksViewController.swift */; };
 		BA02D5342C14BAB2002C1D56 /* TasksProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02D5332C14BAB2002C1D56 /* TasksProtocols.swift */; };
 		BA02D5382C14BC6E002C1D56 /* TasksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02D5372C14BC6E002C1D56 /* TasksRouter.swift */; };
+		BA02D53A2C14C2B4002C1D56 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02D5392C14C2B4002C1D56 /* Extensions.swift */; };
+		BA02D53D2C14CA18002C1D56 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02D53C2C14CA18002C1D56 /* TaskTableViewCell.swift */; };
+		BA02D53F2C14D420002C1D56 /* TasksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02D53E2C14D420002C1D56 /* TasksInteractor.swift */; };
+		BA02D5412C14D5FE002C1D56 /* TasksWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02D5402C14D5FE002C1D56 /* TasksWorker.swift */; };
+		BA02D5432C14D8F7002C1D56 /* TasksRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02D5422C14D8F7002C1D56 /* TasksRemoteDataSource.swift */; };
+		BA02D5462C14D960002C1D56 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02D5452C14D960002C1D56 /* NetworkHelper.swift */; };
+		BA02D54B2C14EE42002C1D56 /* TasksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02D5492C14EE42002C1D56 /* TasksResponse.swift */; };
+		BA02D54D2C14EE67002C1D56 /* TasksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02D54C2C14EE67002C1D56 /* TasksPresenter.swift */; };
+		BA02D54F2C14F037002C1D56 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02D54E2C14F037002C1D56 /* TaskViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +50,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0802A3643D5144B44B2C122D /* Pods-SmartTasks-SmartTasksUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartTasks-SmartTasksUITests.debug.xcconfig"; path = "Target Support Files/Pods-SmartTasks-SmartTasksUITests/Pods-SmartTasks-SmartTasksUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0B6721F886E42B747AD7DD11 /* Pods-SmartTasksTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartTasksTests.release.xcconfig"; path = "Target Support Files/Pods-SmartTasksTests/Pods-SmartTasksTests.release.xcconfig"; sourceTree = "<group>"; };
+		22835CE5B983376DBAB853E7 /* Pods_SmartTasksTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartTasksTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CED2BC005BD137FF6D20828 /* Pods-SmartTasks-SmartTasksUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartTasks-SmartTasksUITests.release.xcconfig"; path = "Target Support Files/Pods-SmartTasks-SmartTasksUITests/Pods-SmartTasks-SmartTasksUITests.release.xcconfig"; sourceTree = "<group>"; };
+		99A1431DACECC56F4D24704C /* Pods_SmartTasks_SmartTasksUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartTasks_SmartTasksUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F4995318B4637C279F2A43C /* Pods-SmartTasksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartTasksTests.debug.xcconfig"; path = "Target Support Files/Pods-SmartTasksTests/Pods-SmartTasksTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A868F5AA804B261FF2A7AEB4 /* Pods-SmartTasks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartTasks.release.xcconfig"; path = "Target Support Files/Pods-SmartTasks/Pods-SmartTasks.release.xcconfig"; sourceTree = "<group>"; };
 		BA02D4F22C14A2FE002C1D56 /* SmartTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA02D4F52C14A2FE002C1D56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA02D4FE2C14A2FF002C1D56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +72,17 @@
 		BA02D52F2C14B953002C1D56 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		BA02D5332C14BAB2002C1D56 /* TasksProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksProtocols.swift; sourceTree = "<group>"; };
 		BA02D5372C14BC6E002C1D56 /* TasksRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksRouter.swift; sourceTree = "<group>"; };
+		BA02D5392C14C2B4002C1D56 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BA02D53C2C14CA18002C1D56 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		BA02D53E2C14D420002C1D56 /* TasksInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksInteractor.swift; sourceTree = "<group>"; };
+		BA02D5402C14D5FE002C1D56 /* TasksWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksWorker.swift; sourceTree = "<group>"; };
+		BA02D5422C14D8F7002C1D56 /* TasksRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksRemoteDataSource.swift; sourceTree = "<group>"; };
+		BA02D5452C14D960002C1D56 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		BA02D5492C14EE42002C1D56 /* TasksResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksResponse.swift; sourceTree = "<group>"; };
+		BA02D54C2C14EE67002C1D56 /* TasksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPresenter.swift; sourceTree = "<group>"; };
+		BA02D54E2C14F037002C1D56 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		C0DC3FF0554C3E39D9BD6850 /* Pods_SmartTasks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartTasks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0C50D403BB406F3981A0A94 /* Pods-SmartTasks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartTasks.debug.xcconfig"; path = "Target Support Files/Pods-SmartTasks/Pods-SmartTasks.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18BBDBB9B07CE6BBAAEC3316 /* Pods_SmartTasks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B10CC5E7CD799DA62696A4C2 /* Pods_SmartTasksTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +106,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FB982F69E8817907C575DFB /* Pods_SmartTasks_SmartTasksUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00E9946CFAF6EE06B723FB8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0DC3FF0554C3E39D9BD6850 /* Pods_SmartTasks.framework */,
+				99A1431DACECC56F4D24704C /* Pods_SmartTasks_SmartTasksUITests.framework */,
+				22835CE5B983376DBAB853E7 /* Pods_SmartTasksTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5137D6E13FB9A0CAF61E4F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F0C50D403BB406F3981A0A94 /* Pods-SmartTasks.debug.xcconfig */,
+				A868F5AA804B261FF2A7AEB4 /* Pods-SmartTasks.release.xcconfig */,
+				0802A3643D5144B44B2C122D /* Pods-SmartTasks-SmartTasksUITests.debug.xcconfig */,
+				2CED2BC005BD137FF6D20828 /* Pods-SmartTasks-SmartTasksUITests.release.xcconfig */,
+				9F4995318B4637C279F2A43C /* Pods-SmartTasksTests.debug.xcconfig */,
+				0B6721F886E42B747AD7DD11 /* Pods-SmartTasksTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BA02D4E92C14A2FE002C1D56 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +143,8 @@
 				BA02D50B2C14A2FF002C1D56 /* SmartTasksTests */,
 				BA02D5152C14A2FF002C1D56 /* SmartTasksUITests */,
 				BA02D4F32C14A2FE002C1D56 /* Products */,
+				B5137D6E13FB9A0CAF61E4F1 /* Pods */,
+				00E9946CFAF6EE06B723FB8B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +164,8 @@
 				BA02D5272C14A3F2002C1D56 /* Resources */,
 				BA02D4F52C14A2FE002C1D56 /* AppDelegate.swift */,
 				BA02D52B2C14AFC7002C1D56 /* SceneDelegate.swift */,
+				BA02D5392C14C2B4002C1D56 /* Extensions.swift */,
+				BA02D5442C14D953002C1D56 /* Network */,
 				BA02D52D2C14B93D002C1D56 /* Tasks */,
 				BA02D52E2C14B93D002C1D56 /* TaskDetails */,
 				BA02D4FE2C14A2FF002C1D56 /* Assets.xcassets */,
@@ -159,9 +219,15 @@
 		BA02D52D2C14B93D002C1D56 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				BA02D53B2C14CA02002C1D56 /* CustomViews */,
+				BA02D54A2C14EE42002C1D56 /* Entities */,
 				BA02D5332C14BAB2002C1D56 /* TasksProtocols.swift */,
 				BA02D52F2C14B953002C1D56 /* TasksViewController.swift */,
 				BA02D5372C14BC6E002C1D56 /* TasksRouter.swift */,
+				BA02D53E2C14D420002C1D56 /* TasksInteractor.swift */,
+				BA02D5402C14D5FE002C1D56 /* TasksWorker.swift */,
+				BA02D5422C14D8F7002C1D56 /* TasksRemoteDataSource.swift */,
+				BA02D54C2C14EE67002C1D56 /* TasksPresenter.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -173,6 +239,31 @@
 			path = TaskDetails;
 			sourceTree = "<group>";
 		};
+		BA02D53B2C14CA02002C1D56 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				BA02D53C2C14CA18002C1D56 /* TaskTableViewCell.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		BA02D5442C14D953002C1D56 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BA02D5452C14D960002C1D56 /* NetworkHelper.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		BA02D54A2C14EE42002C1D56 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				BA02D5492C14EE42002C1D56 /* TasksResponse.swift */,
+				BA02D54E2C14F037002C1D56 /* TaskViewModel.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,9 +271,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA02D51C2C14A2FF002C1D56 /* Build configuration list for PBXNativeTarget "SmartTasks" */;
 			buildPhases = (
+				34AF7AAE7B14C1E4FBAC5CA7 /* [CP] Check Pods Manifest.lock */,
 				BA02D4EE2C14A2FE002C1D56 /* Sources */,
 				BA02D4EF2C14A2FE002C1D56 /* Frameworks */,
 				BA02D4F02C14A2FE002C1D56 /* Resources */,
+				AB90C80E1B057D5B318FC430 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -197,6 +290,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA02D51F2C14A2FF002C1D56 /* Build configuration list for PBXNativeTarget "SmartTasksTests" */;
 			buildPhases = (
+				086352DA06840D376F359F70 /* [CP] Check Pods Manifest.lock */,
 				BA02D5042C14A2FF002C1D56 /* Sources */,
 				BA02D5052C14A2FF002C1D56 /* Frameworks */,
 				BA02D5062C14A2FF002C1D56 /* Resources */,
@@ -215,9 +309,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA02D5222C14A2FF002C1D56 /* Build configuration list for PBXNativeTarget "SmartTasksUITests" */;
 			buildPhases = (
+				EC2662AC847C9FA132132EEA /* [CP] Check Pods Manifest.lock */,
 				BA02D50E2C14A2FF002C1D56 /* Sources */,
 				BA02D50F2C14A2FF002C1D56 /* Frameworks */,
 				BA02D5102C14A2FF002C1D56 /* Resources */,
+				D95850AB1780AB3AF9F7EABD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -299,14 +395,126 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		086352DA06840D376F359F70 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartTasksTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34AF7AAE7B14C1E4FBAC5CA7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartTasks-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB90C80E1B057D5B318FC430 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartTasks/Pods-SmartTasks-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartTasks/Pods-SmartTasks-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartTasks/Pods-SmartTasks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D95850AB1780AB3AF9F7EABD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartTasks-SmartTasksUITests/Pods-SmartTasks-SmartTasksUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartTasks-SmartTasksUITests/Pods-SmartTasks-SmartTasksUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartTasks-SmartTasksUITests/Pods-SmartTasks-SmartTasksUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC2662AC847C9FA132132EEA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartTasks-SmartTasksUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BA02D4EE2C14A2FE002C1D56 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA02D53D2C14CA18002C1D56 /* TaskTableViewCell.swift in Sources */,
+				BA02D54F2C14F037002C1D56 /* TaskViewModel.swift in Sources */,
+				BA02D54B2C14EE42002C1D56 /* TasksResponse.swift in Sources */,
+				BA02D53F2C14D420002C1D56 /* TasksInteractor.swift in Sources */,
+				BA02D5412C14D5FE002C1D56 /* TasksWorker.swift in Sources */,
 				BA02D4F62C14A2FE002C1D56 /* AppDelegate.swift in Sources */,
+				BA02D5462C14D960002C1D56 /* NetworkHelper.swift in Sources */,
+				BA02D53A2C14C2B4002C1D56 /* Extensions.swift in Sources */,
 				BA02D52C2C14AFC7002C1D56 /* SceneDelegate.swift in Sources */,
 				BA02D5382C14BC6E002C1D56 /* TasksRouter.swift in Sources */,
+				BA02D5432C14D8F7002C1D56 /* TasksRemoteDataSource.swift in Sources */,
+				BA02D54D2C14EE67002C1D56 /* TasksPresenter.swift in Sources */,
 				BA02D5342C14BAB2002C1D56 /* TasksProtocols.swift in Sources */,
 				BA02D5302C14B953002C1D56 /* TasksViewController.swift in Sources */,
 			);
@@ -477,11 +685,13 @@
 		};
 		BA02D51D2C14A2FF002C1D56 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0C50D403BB406F3981A0A94 /* Pods-SmartTasks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SmartTasks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -504,11 +714,13 @@
 		};
 		BA02D51E2C14A2FF002C1D56 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A868F5AA804B261FF2A7AEB4 /* Pods-SmartTasks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SmartTasks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -531,6 +743,7 @@
 		};
 		BA02D5202C14A2FF002C1D56 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F4995318B4637C279F2A43C /* Pods-SmartTasksTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -550,6 +763,7 @@
 		};
 		BA02D5212C14A2FF002C1D56 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B6721F886E42B747AD7DD11 /* Pods-SmartTasksTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -569,6 +783,7 @@
 		};
 		BA02D5232C14A2FF002C1D56 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0802A3643D5144B44B2C122D /* Pods-SmartTasks-SmartTasksUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -586,6 +801,7 @@
 		};
 		BA02D5242C14A2FF002C1D56 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CED2BC005BD137FF6D20828 /* Pods-SmartTasks-SmartTasksUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

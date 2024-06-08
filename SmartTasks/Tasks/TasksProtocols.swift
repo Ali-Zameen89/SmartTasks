@@ -11,6 +11,25 @@ protocol TasksRouterProtocol {
   
 }
 
-protocol TasksViewProtocol {
+protocol TasksViewProtocol: AnyObject {
+//  var router: TasksRouterProtocol { get set }
+//  var interactor: TasksInteractorProtocol { get set }
   
+  func populateTasks(_ viewModels: [TaskViewModel])
+}
+
+protocol TasksInteractorProtocol {
+  mutating func fetchTasks()
+}
+
+protocol TasksPresenterProtocol {
+  mutating func formatData(tasks: [Task]?)
+}
+
+protocol TasksWorkerProtocol {
+  func fetchTasks(completion: @escaping (TasksResponse) -> Void)
+}
+
+protocol TasksRemoteDataSourceProtocol {
+  func fetchTasks(completion: @escaping (TasksResponse) -> Void)
 }

@@ -11,13 +11,13 @@ struct TasksRouter: TasksRouterProtocol {
     
     let tasksViewController = TasksViewController()
     
-//    let interactor = ReferralFirstEntryInteractor(referralOrigin: referralOrigin)
-//    let presenter = ReferralFirstEntryPresenter()
-//    var router = TasksRouter()
-//    presenter.view = referralFirstEntryViewController
-//    interactor.presenter = presenter
-//    referralFirstEntryViewController.interactor = interactor
-//    referralFirstEntryViewController.router = router
+    var interactor = TasksInteractor()
+    var presenter = TasksPresenter()
+    var router = TasksRouter()
+    presenter.view = tasksViewController
+    interactor.presenter = presenter
+    tasksViewController.interactor = interactor
+    tasksViewController.router = router
     
     return tasksViewController
   }
