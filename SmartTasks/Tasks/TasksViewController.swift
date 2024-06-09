@@ -158,8 +158,9 @@ extension TasksViewController: TasksViewProtocol {
     self.title = targetDate
     
     tableView.isHidden = true
+    noTasksView.isHidden = false
     
-    noTasksView.removeFromSuperview()
+//    noTasksView.removeFromSuperview()
     view.addSubview(noTasksView)
     
     // Set up constraints for noTasksView to center it in the view
