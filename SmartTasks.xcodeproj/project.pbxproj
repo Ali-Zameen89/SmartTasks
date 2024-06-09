@@ -31,6 +31,9 @@
 		BA02D54D2C14EE67002C1D56 /* TasksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02D54C2C14EE67002C1D56 /* TasksPresenter.swift */; };
 		BA02D54F2C14F037002C1D56 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02D54E2C14F037002C1D56 /* TaskViewModel.swift */; };
 		BA8A75992C14FB2E007A7599 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A75982C14FB2E007A7599 /* CustomLabel.swift */; };
+		BA8A759C2C158BF0007A7599 /* AmsiPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA8A759A2C158BF0007A7599 /* AmsiPro-Regular.otf */; };
+		BA8A759D2C158BF0007A7599 /* AmsiPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA8A759B2C158BF0007A7599 /* AmsiPro-Bold.otf */; };
+		BA8A759F2C1590E2007A7599 /* NoTasksTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A759E2C1590E2007A7599 /* NoTasksTodayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,9 @@
 		BA02D54C2C14EE67002C1D56 /* TasksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPresenter.swift; sourceTree = "<group>"; };
 		BA02D54E2C14F037002C1D56 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		BA8A75982C14FB2E007A7599 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		BA8A759A2C158BF0007A7599 /* AmsiPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AmsiPro-Regular.otf"; sourceTree = "<group>"; };
+		BA8A759B2C158BF0007A7599 /* AmsiPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AmsiPro-Bold.otf"; sourceTree = "<group>"; };
+		BA8A759E2C1590E2007A7599 /* NoTasksTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTasksTodayView.swift; sourceTree = "<group>"; };
 		C0DC3FF0554C3E39D9BD6850 /* Pods_SmartTasks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartTasks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0C50D403BB406F3981A0A94 /* Pods-SmartTasks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartTasks.debug.xcconfig"; path = "Target Support Files/Pods-SmartTasks/Pods-SmartTasks.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,6 +203,8 @@
 		BA02D5252C14A3F2002C1D56 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				BA8A759B2C158BF0007A7599 /* AmsiPro-Bold.otf */,
+				BA8A759A2C158BF0007A7599 /* AmsiPro-Regular.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -246,6 +254,7 @@
 			children = (
 				BA02D53C2C14CA18002C1D56 /* TaskTableViewCell.swift */,
 				BA8A75982C14FB2E007A7599 /* CustomLabel.swift */,
+				BA8A759E2C1590E2007A7599 /* NoTasksTodayView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -376,7 +385,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA8A759C2C158BF0007A7599 /* AmsiPro-Regular.otf in Resources */,
 				BA02D5292C14A3FE002C1D56 /* Intro.png in Resources */,
+				BA8A759D2C158BF0007A7599 /* AmsiPro-Bold.otf in Resources */,
 				BA02D4FF2C14A2FF002C1D56 /* Assets.xcassets in Resources */,
 				BA02D5022C14A2FF002C1D56 /* Base in Resources */,
 			);
@@ -506,6 +517,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA8A759F2C1590E2007A7599 /* NoTasksTodayView.swift in Sources */,
 				BA02D53D2C14CA18002C1D56 /* TaskTableViewCell.swift in Sources */,
 				BA8A75992C14FB2E007A7599 /* CustomLabel.swift in Sources */,
 				BA02D54F2C14F037002C1D56 /* TaskViewModel.swift in Sources */,
