@@ -26,14 +26,14 @@ extension TasksPresenter: TasksPresenterProtocol {
   mutating func formatData(selectedDate: Date, tasks: [Task]?) {
     viewModels.removeAll()
     
+    let formattedTargetDate = formatTargetDate(selectedDate)
+    
     guard let tasks = tasks, !tasks.isEmpty else {
-      view?.noTasksForToday()
+      view?.noTasksForToday(targetDate: formattedTargetDate)
       return
     }
     
     viewModels = tasks.compactMap { TaskViewModel(task: $0) }
-    
-    let formattedTargetDate = formatTargetDate(selectedDate)
     view?.populateTasks(targetDate: formattedTargetDate, viewModels: viewModels)
   }
 }

@@ -101,6 +101,7 @@ final class TasksViewController: UIViewController {
   }
   
   private func setupMainView() {
+    self.title = "Today"
     view.backgroundColor = SmartTasksUI.Colors.yellowBackgroundColor
   }
   
@@ -140,16 +141,21 @@ extension TasksViewController: TasksViewProtocol {
   // Populate table view with tasks
   func populateTasks(targetDate: String, viewModels: [TaskViewModel]) {
     hideActivityIndicator()
+    
     self.title = targetDate
     self.viewModels = viewModels
-    tableView.isHidden = false
+    
     noTasksView.isHidden = true
+    
+    tableView.isHidden = false
     tableView.reloadData()
   }
   
   // Show no tasks for today view
-  func noTasksForToday() {
+  func noTasksForToday(targetDate: String) {
     hideActivityIndicator()
+    
+    self.title = targetDate
     
     tableView.isHidden = true
     
