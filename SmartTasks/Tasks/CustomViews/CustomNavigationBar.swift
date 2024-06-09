@@ -25,9 +25,9 @@ final class CustomNavigationBar: UINavigationBar {
     titleTextAttributes = [.foregroundColor: UIColor.white, .font: titleFont]
     
     // Background Color (Yellow from image)
-    backgroundColor = AppConstants.Colors.yellowBackgroundColor
+    backgroundColor = SmartTasksUI.Colors.yellowBackgroundColor
     tintColor = .white // Button colors
-    barTintColor = AppConstants.Colors.yellowBackgroundColor
+    barTintColor = SmartTasksUI.Colors.yellowBackgroundColor
     
     // Remove Separator (from image)
     shadowImage = UIImage()

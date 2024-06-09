@@ -4,8 +4,8 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>AmsiPro-Bold</string>
-		<string>AmsiPro-Regular</string>
+		<string>AmsiPro-Bold.otf</string>
+		<string>AmsiPro-Regular.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

@@ -57,25 +57,31 @@ final class TaskTableViewCell: UITableViewCell {
   }()
   
   // Custom labels for task details
-  let taskTitleLabel = CustomLabel(text: "Task Title", fontSize: .medium, fontName: "HelveticaNeue-Bold")
-  let dueDateLabel = CustomLabel(text: "Due date", fontSize: .medium, textColor: .systemGray)
-  let dueDateValueLabel = CustomLabel(text: "Apr 23 2016", fontSize: .medium)
-  let daysLeftLabel = CustomLabel(text: "Days left", fontSize: .medium, textColor: .systemGray)
-  let daysLeftValueLabel = CustomLabel(text: "12", fontSize: .medium)
   
-  // Constants struct for spacing and colors (currently commented out)
-  struct Constants {
-    struct Spacing {
-      //      static let mini: CGFloat = 4
-      //      static let small: CGFloat = 8
-      //      static let normal: CGFloat = 16
-      //      static let large: CGFloat = 24
-    }
-    
-    struct Color {
-      static let background = UIColor.white
-    }
-  }
+  private lazy var taskTitleLabel: CustomLabel = {
+    let label = CustomLabel(text: "Task Title", font: SmartTasksUI.font(type: .bold, size: .medium), textColor: SmartTasksUI.Colors.redColor)
+    return label
+  }()
+  
+  private lazy var daysLeftValueLabel: CustomLabel = {
+    let label = CustomLabel(font: SmartTasksUI.font(type: .bold, size: .medium), textColor: SmartTasksUI.Colors.redColor)
+    return label
+  }()
+  
+  private lazy var dueDateLabel: CustomLabel = {
+    let label = CustomLabel(text: "Due date", font: SmartTasksUI.font(type: .regular, size: .small), textColor: SmartTasksUI.Colors.grayColor)
+    return label
+  }()
+  
+  private lazy var dueDateValueLabel: CustomLabel = {
+    let label = CustomLabel(font: SmartTasksUI.font(type: .bold, size: .medium), textColor: SmartTasksUI.Colors.redColor)
+    return label
+  }()
+  
+  private lazy var daysLeftLabel: CustomLabel = {
+    let label = CustomLabel(text: "Days left", font: SmartTasksUI.font(type: .regular, size: .small), textColor: SmartTasksUI.Colors.grayColor)
+    return label
+  }()
   
   // Initializer for creating the cell programmatically
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -98,10 +104,16 @@ final class TaskTableViewCell: UITableViewCell {
   // Method to configure the cell with a TaskViewModel
   func setup(_ viewModel: TaskViewModel) {
     taskTitleLabel.text = viewModel.title
-    taskTitleLabel.textColor = UIColor(hexString: "EF4B5E")
-    dueDateValueLabel.text = viewModel.formattedDueDate
-    dueDateValueLabel.textColor = UIColor(hexString: "EF4B5E")
     daysLeftValueLabel.text = viewModel.daysLeft
+    
+    dueDateStackView.isHidden = true
+    daysLeftStackView.isHidden = true
+    
+    if let formattedDueDate = viewModel.formattedDueDate {
+      dueDateStackView.isHidden = false
+      daysLeftStackView.isHidden = false
+      dueDateValueLabel.text = viewModel.formattedDueDate
+    }
   }
 }
 

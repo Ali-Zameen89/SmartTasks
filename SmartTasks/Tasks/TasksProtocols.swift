@@ -16,7 +16,7 @@ protocol TasksViewProtocol: AnyObject {
 //  var router: TasksRouterProtocol { get set }
 //  var interactor: TasksInteractorProtocol { get set }
   
-  func populateTasks(_ viewModels: [TaskViewModel])
+  func populateTasks(targetDate: String, viewModels: [TaskViewModel])
   func noTasksForToday()
 }
 
@@ -26,7 +26,7 @@ protocol TasksInteractorProtocol {
 }
 
 protocol TasksPresenterProtocol {
-  mutating func formatData(tasks: [Task]?)
+  mutating func formatData(selectedDate: Date, tasks: [Task]?)
 }
 
 protocol TasksWorkerProtocol {

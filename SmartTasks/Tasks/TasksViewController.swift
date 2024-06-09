@@ -59,7 +59,7 @@ final class TasksViewController: UIViewController {
   private func setupNavigationBar() {
     navigationItem.title = "Today"
     
-    let titleFont = UIFont(name: "HelveticaNeue-Bold", size: 20) ?? UIFont.boldSystemFont(ofSize: 20)
+    let titleFont = SmartTasksUI.font(type: .bold, size: .large)
     
     navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: titleFont]
     
@@ -69,9 +69,9 @@ final class TasksViewController: UIViewController {
     navigationItem.rightBarButtonItem = forwardButton
     
     // Background Color
-    navigationController?.navigationBar.backgroundColor = AppConstants.Colors.yellowBackgroundColor
+    navigationController?.navigationBar.backgroundColor = SmartTasksUI.Colors.yellowBackgroundColor
     navigationController?.navigationBar.tintColor = .white
-    navigationController?.navigationBar.barTintColor = AppConstants.Colors.yellowBackgroundColor
+    navigationController?.navigationBar.barTintColor = SmartTasksUI.Colors.yellowBackgroundColor
     
     // Remove Separator
     navigationController?.navigationBar.shadowImage = UIImage()
@@ -92,7 +92,7 @@ final class TasksViewController: UIViewController {
   private func setupTableView() {
     view.backgroundColor = .white
     view.addSubview(tableView)
-    tableView.backgroundColor = AppConstants.Colors.yellowBackgroundColor
+    tableView.backgroundColor = SmartTasksUI.Colors.yellowBackgroundColor
     
     NSLayoutConstraint.activate([
       tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -103,7 +103,7 @@ final class TasksViewController: UIViewController {
   }
   
   private func setupMainView() {
-    view.backgroundColor = AppConstants.Colors.yellowBackgroundColor
+    view.backgroundColor = SmartTasksUI.Colors.yellowBackgroundColor
   }
   
   // Setup the activity indicator layout and constraints
@@ -140,8 +140,9 @@ final class TasksViewController: UIViewController {
 extension TasksViewController: TasksViewProtocol {
   
   // Populate table view with tasks
-  func populateTasks(_ viewModels: [TaskViewModel]) {
+  func populateTasks(targetDate: String, viewModels: [TaskViewModel]) {
     hideActivityIndicator()
+    //    self.title = targetDate
     self.viewModels = viewModels
     tableView.isHidden = false
     noTasksView.isHidden = true

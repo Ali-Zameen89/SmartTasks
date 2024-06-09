@@ -126,7 +126,7 @@ extension UIView {
   static var customSeparatorView: UIView = {
     let view = UIView()
     view.translatesAutoresizingMaskIntoConstraints = false
-    view.backgroundColor = AppConstants.Colors.separatorBackgroundColor
+    view.backgroundColor = SmartTasksUI.Colors.separatorBackgroundColor
     view.heightAnchor.constraint(equalToConstant: 1.0).isActive = true
     return view
   }()

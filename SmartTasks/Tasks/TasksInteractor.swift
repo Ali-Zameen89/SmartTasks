@@ -58,7 +58,7 @@ extension TasksInteractor: TasksInteractorProtocol {
   
   private func sendTasksFor(_ selectedDate: Date) {
     guard let tasks, !tasks.isEmpty else {
-      presenter?.formatData(tasks: [])
+      presenter?.formatData(selectedDate: selectedDate, tasks: [])
       return
     }
     
@@ -74,6 +74,6 @@ extension TasksInteractor: TasksInteractorProtocol {
     }
     
     // 2. Pass filtered tasks to the presenter
-    presenter?.formatData(tasks: filteredTasks)
+    presenter?.formatData(selectedDate: selectedDate, tasks: filteredTasks)
   }
 }

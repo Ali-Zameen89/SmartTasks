@@ -56,20 +56,68 @@ final class TaskDetailsViewController: UIViewController {
     return stackView
   }()
   
+  // Stack view for due date labels
+  private lazy var dueDateStackView: UIStackView = {
+    let stackView = UIStackView()
+    stackView.axis = .vertical
+    stackView.translatesAutoresizingMaskIntoConstraints = false
+    stackView.spacing = 7.0
+    return stackView
+  }()
+  
+  // Stack view for days left labels
+  private lazy var daysLeftStackView: UIStackView = {
+    let stackView = UIStackView()
+    stackView.axis = .vertical
+    stackView.alignment = .trailing
+    stackView.translatesAutoresizingMaskIntoConstraints = false
+    stackView.spacing = 7.0
+    return stackView
+  }()
+  
   // Custom labels for task details
-  let taskTitleLabel = CustomLabel(text: "Task Title", fontSize: .large, fontName: "HelveticaNeue-Bold", textColor: .red)
-  let dueDateLabel = CustomLabel(text: "Due date", fontSize: .small, textColor: .systemGray)
-  let dueDateValueLabel = CustomLabel(text: "Apr 23 2016", fontSize: .medium, textColor: .red)
-  let daysLeftLabel = CustomLabel(text: "Days left", fontSize: .small, textColor: .systemGray)
-  let daysLeftValueLabel = CustomLabel(text: "12", fontSize: .medium, textColor: .red)
-  let taskDescriptionLabel = CustomLabel(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in porta nunc, sed porttitor lectus. Sed dictum velit non orci fringilla tristique. Nam semper gravida consequat. Morbi id tellus nunc.", fontSize: .small)
-  let taskStatusLabel = CustomLabel(text: "Unresolved", fontSize: .medium, textColor: .systemOrange)
+  
+  private lazy var taskTitleLabel: CustomLabel = {
+    let label = CustomLabel(text: "Task Title", font: SmartTasksUI.font(type: .bold, size: .Extralarge), textColor: SmartTasksUI.Colors.redColor)
+    return label
+  }()
+  
+  private lazy var daysLeftValueLabel: CustomLabel = {
+    let label = CustomLabel(font: SmartTasksUI.font(type: .bold, size: .medium), textColor: SmartTasksUI.Colors.redColor)
+    return label
+  }()
+  
+  private lazy var dueDateLabel: CustomLabel = {
+    let label = CustomLabel(text: "Due date", font: SmartTasksUI.font(type: .regular, size: .small), textColor: SmartTasksUI.Colors.grayColor)
+    return label
+  }()
+  
+  private lazy var dueDateValueLabel: CustomLabel = {
+    let label = CustomLabel(font: SmartTasksUI.font(type: .bold, size: .medium), textColor: SmartTasksUI.Colors.redColor)
+    return label
+  }()
+  
+  private lazy var daysLeftLabel: CustomLabel = {
+    let label = CustomLabel(text: "Days left", font: SmartTasksUI.font(type: .regular, size: .small), textColor: SmartTasksUI.Colors.grayColor)
+    return label
+  }()
+  
+  private lazy var taskDescriptionLabel: CustomLabel = {
+    let label = CustomLabel(font: SmartTasksUI.font(type: .regular, size: .medium), textColor: SmartTasksUI.Colors.grayColor)
+    return label
+  }()
+  
+  private lazy var taskStatusLabel: CustomLabel = {
+    let label = CustomLabel(font: SmartTasksUI.font(type: .bold, size: .medium))
+    return label
+  }()
   
   // Resolve and Can't resolve buttons
   private lazy var resolveButton: UIButton = {
     let button = UIButton(type: .system)
     button.setTitle("Resolve", for: .normal)
-    button.backgroundColor = .systemGreen
+    button.titleLabel?.font = SmartTasksUI.font(type: .bold, size: .large)
+    button.backgroundColor = SmartTasksUI.Colors.grayColor
     button.setTitleColor(.white, for: .normal)
     button.layer.cornerRadius = 5.0
     button.translatesAutoresizingMaskIntoConstraints = false
@@ -79,7 +127,8 @@ final class TaskDetailsViewController: UIViewController {
   private lazy var cantResolveButton: UIButton = {
     let button = UIButton(type: .system)
     button.setTitle("Can't resolve", for: .normal)
-    button.backgroundColor = .systemRed
+    button.titleLabel?.font = SmartTasksUI.font(type: .bold, size: .large)
+    button.backgroundColor = SmartTasksUI.Colors.redColor
     button.setTitleColor(.white, for: .normal)
     button.layer.cornerRadius = 5.0
     button.translatesAutoresizingMaskIntoConstraints = false
@@ -103,9 +152,6 @@ final class TaskDetailsViewController: UIViewController {
   // Router to handle navigation
   var router: TaskDetailsRouterProtocol?
   
-  // Array of view models to populate the table view
-  //  private var viewModels = [TaskViewModel]()
-  
   // Load view programmatically
   override func loadView() {
     view = UIView(frame: UIScreen.main.bounds)
@@ -123,7 +169,7 @@ final class TaskDetailsViewController: UIViewController {
   private func setupNavigationBar() {
     navigationItem.title = "Task Detail"
     
-    let titleFont = UIFont(name: "HelveticaNeue-Bold", size: 20) ?? UIFont.boldSystemFont(ofSize: 20)
+    let titleFont = SmartTasksUI.font(type: .bold, size: .large)
     
     navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: titleFont]
     
@@ -132,9 +178,9 @@ final class TaskDetailsViewController: UIViewController {
     navigationItem.leftBarButtonItem = backButton
     
     // Background Color
-    navigationController?.navigationBar.backgroundColor = AppConstants.Colors.yellowBackgroundColor
+    navigationController?.navigationBar.backgroundColor = SmartTasksUI.Colors.yellowBackgroundColor
     navigationController?.navigationBar.tintColor = .white
-    navigationController?.navigationBar.barTintColor = AppConstants.Colors.yellowBackgroundColor
+    navigationController?.navigationBar.barTintColor = SmartTasksUI.Colors.yellowBackgroundColor
     
     // Remove Separator
     navigationController?.navigationBar.shadowImage = UIImage()
@@ -147,7 +193,7 @@ final class TaskDetailsViewController: UIViewController {
   
   private func setupViews() {
     
-    view.backgroundColor = AppConstants.Colors.yellowBackgroundColor
+    view.backgroundColor = SmartTasksUI.Colors.yellowBackgroundColor
     
     view.addSubview(mainContainerView)
     
@@ -156,14 +202,16 @@ final class TaskDetailsViewController: UIViewController {
     mainContainerView.addSubview(mainVerticalStackView)
     
     titleDateStackView.addArrangedSubview(taskTitleLabel)
-    titleDateStackView.addArrangedSubview(dueDateLabel)
-    titleDateStackView.addArrangedSubview(dueDateValueLabel)
     
-    dueDateDaysLeftStackView.addArrangedSubview(dueDateLabel)
-    dueDateDaysLeftStackView.addArrangedSubview(dueDateValueLabel)
-    dueDateDaysLeftStackView.addArrangedSubview(UIView())
-    dueDateDaysLeftStackView.addArrangedSubview(daysLeftLabel)
-    dueDateDaysLeftStackView.addArrangedSubview(daysLeftValueLabel)
+    dueDateStackView.addArrangedSubview(dueDateLabel)
+    dueDateStackView.addArrangedSubview(dueDateValueLabel)
+    
+    dueDateDaysLeftStackView.addArrangedSubview(dueDateStackView)
+    dueDateDaysLeftStackView.addArrangedSubview(UIView.spacer)
+    
+    daysLeftStackView.addArrangedSubview(daysLeftLabel)
+    daysLeftStackView.addArrangedSubview(daysLeftValueLabel)
+    dueDateDaysLeftStackView.addArrangedSubview(daysLeftStackView)
     
     mainVerticalStackView.addArrangedSubview(titleDateStackView)
     mainVerticalStackView.addArrangedSubview(UIView.customSeparatorView)
@@ -207,15 +255,8 @@ extension TaskDetailsViewController: TaskDetailsViewProtocol {
     taskDescriptionLabel.text = viewModel.taskDescription
     taskTitleLabel.text = viewModel.title
     dueDateValueLabel.text = viewModel.formattedDueDate
+    
+    taskStatusLabel.text = "Unresolved"
+    taskStatusLabel.textColor = SmartTasksUI.Colors.yellowBackgroundColor
   }
-  
-  
-  // Populate table view with tasks
-  //  func populateTasks(_ viewModels: [TaskViewModel]) {
-  //    hideActivityIndicator()
-  //    self.viewModels = viewModels
-  //    tableView.isHidden = false
-  //    noTasksView.isHidden = true
-  //    tableView.reloadData()
-  //  }
 }
