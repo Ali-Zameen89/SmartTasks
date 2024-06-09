@@ -7,7 +7,7 @@
 
 final class TaskDetailsInteractor {
   
-  private let task: Task
+  private var task: Task
   
   var presenter: TaskDetailsPresenterProtocol?
   
@@ -17,6 +17,16 @@ final class TaskDetailsInteractor {
 }
 
 extension TaskDetailsInteractor: TaskDetailsInteractorProtocol {
+  
+  func markResolved() {
+    task.taskStatus = .resolved
+    presenter?.formatData(task)
+  }
+  
+  func markUnResolved() {
+    task.taskStatus = .unResolved
+    presenter?.formatData(task)
+  }
   
   func getDetails() {
     presenter?.formatData(self.task)

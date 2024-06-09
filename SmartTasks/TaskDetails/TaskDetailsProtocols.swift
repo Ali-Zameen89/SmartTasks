@@ -18,7 +18,8 @@ protocol TaskDetailsViewProtocol: AnyObject {
 
 protocol TaskDetailsInteractorProtocol {
   func getDetails()
-  
+  func markResolved()
+  func markUnResolved()
 }
 
 protocol TaskDetailsPresenterProtocol {
