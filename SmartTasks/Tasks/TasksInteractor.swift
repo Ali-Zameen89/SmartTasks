@@ -73,7 +73,7 @@ extension TasksInteractor: TasksInteractorProtocol {
     }
     
     // Sort filtered tasks by priority
-    let sortedTasks = filteredTasks.sorted(by: { $0.priority ?? 0 < $1.priority ?? 0 })
+    let sortedTasks = filteredTasks.sorted(by: { $0.priority ?? 0 > $1.priority ?? 0 })
     
     // Pass filtered tasks to the presenter
     presenter?.formatData(selectedDate: selectedDate, tasks: sortedTasks)
