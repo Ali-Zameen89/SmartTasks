@@ -123,18 +123,18 @@ extension String {
 
 extension UIView {
   
-  static var customSeparatorView: UIView = {
+  static var customSeparatorView: UIView {
     let view = UIView()
     view.translatesAutoresizingMaskIntoConstraints = false
     view.backgroundColor = SmartTasksUI.Colors.separatorBackgroundColor
     view.heightAnchor.constraint(equalToConstant: 1.0).isActive = true
     return view
-  }()
+  }
   
   // Spacer view to add flexible space in the layout
-  static var spacer: UIView = {
+  static var spacer: UIView {
     let view = UIView()
     view.translatesAutoresizingMaskIntoConstraints = false
     return view
-  }()
+  }
 }

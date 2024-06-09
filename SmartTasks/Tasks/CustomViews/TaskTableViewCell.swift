@@ -112,7 +112,7 @@ final class TaskTableViewCell: UITableViewCell {
     if let formattedDueDate = viewModel.formattedDueDate {
       dueDateStackView.isHidden = false
       daysLeftStackView.isHidden = false
-      dueDateValueLabel.text = viewModel.formattedDueDate
+      dueDateValueLabel.text = formattedDueDate
     }
   }
 }
@@ -157,8 +157,7 @@ private extension TaskTableViewCell {
   
   // Method to reset the views to their default state
   func resetViews() {
-    taskTitleLabel.text = ""
-    dueDateValueLabel.text = ""
     daysLeftValueLabel.text = ""
+    dueDateValueLabel.text = ""
   }
 }
