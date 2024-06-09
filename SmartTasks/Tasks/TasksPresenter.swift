@@ -6,24 +6,23 @@
 //
 
 struct TasksPresenter {
-  
+  // MARK: - Properties
   weak var view: TasksViewProtocol?
-  var viewModels = [TaskViewModel]()
+  private(set) var viewModels = [TaskViewModel]()
 }
 
 extension TasksPresenter: TasksPresenterProtocol {
   
+  // MARK: - Data Formatting
   mutating func formatData(tasks: [Task]?) {
     viewModels.removeAll()
     
-    guard let tasks, !tasks.isEmpty else {
+    guard let tasks = tasks, !tasks.isEmpty else {
+      view?.noTasksForToday()
       return
     }
     
-    for task in tasks {
-      viewModels.append(TaskViewModel(task: task))
-    }
-    
+    viewModels = tasks.compactMap { TaskViewModel(task: $0) } // Remove nil viewModels
     view?.populateTasks(viewModels)
   }
 }

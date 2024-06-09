@@ -8,7 +8,7 @@
 import Foundation
 
 protocol TasksRouterProtocol {
-  
+  static func getTasksView() -> TasksViewProtocol?
 }
 
 protocol TasksViewProtocol: AnyObject {
@@ -16,10 +16,12 @@ protocol TasksViewProtocol: AnyObject {
 //  var interactor: TasksInteractorProtocol { get set }
   
   func populateTasks(_ viewModels: [TaskViewModel])
+  func noTasksForToday()
 }
 
 protocol TasksInteractorProtocol {
-  mutating func fetchTasks()
+  func fetchAllTasks()
+  func fetchTasksForDate(_ fetchDate: FetchDate)
 }
 
 protocol TasksPresenterProtocol {

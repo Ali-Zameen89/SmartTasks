@@ -30,6 +30,12 @@ final class TasksViewController: UIViewController {
     return tableView
   }()
   
+  private lazy var noTasksView: NoTasksView = {
+    let view = NoTasksView()
+    view.translatesAutoresizingMaskIntoConstraints = false
+    return view
+  }()
+  
   // Activity indicator to show progress
   private let activityIndicator = UIActivityIndicatorView(style: .large)
   
@@ -43,8 +49,44 @@ final class TasksViewController: UIViewController {
   public override func viewDidLoad() {
     super.viewDidLoad()
     setupTableView()
+    setupMainView()
     setupActivityIndicator()
     fetchData()
+    setupNavigationBar()
+  }
+  
+  // #ALI Refactor this.
+  private func setupNavigationBar() {
+    navigationItem.title = "Today"
+    
+    let titleFont = UIFont(name: "HelveticaNeue-Bold", size: 20) ?? UIFont.boldSystemFont(ofSize: 20)
+    
+    navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: titleFont]
+    
+    let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonTapped))
+    let forwardButton = UIBarButtonItem(image: UIImage(systemName: "chevron.right"), style: .plain, target: self, action: #selector(forwardButtonTapped))
+    navigationItem.leftBarButtonItem = backButton
+    navigationItem.rightBarButtonItem = forwardButton
+    
+    // Background Color (Yellow)
+    let yellowColor = UIColor(hexString: "FFDE61")
+    navigationController?.navigationBar.backgroundColor = yellowColor
+    navigationController?.navigationBar.tintColor = .white
+    navigationController?.navigationBar.barTintColor = yellowColor
+    
+    // Remove Separator
+    navigationController?.navigationBar.shadowImage = UIImage()
+    navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+  }
+  
+  @objc func backButtonTapped() {
+    showActivityIndicator()
+    interactor?.fetchTasksForDate(.previous)
+  }
+  
+  @objc func forwardButtonTapped() {
+    showActivityIndicator()
+    interactor?.fetchTasksForDate(.next)
   }
   
   // Setup the table view layout and constraints
@@ -59,6 +101,10 @@ final class TasksViewController: UIViewController {
       tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
       tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
     ])
+  }
+  
+  private func setupMainView() {
+    view.backgroundColor = UIColor(hexString: "FFDE61")
   }
   
   // Setup the activity indicator layout and constraints
@@ -87,7 +133,7 @@ final class TasksViewController: UIViewController {
   // Fetch tasks from the interactor
   private func fetchData() {
     showActivityIndicator()
-    interactor?.fetchTasks()
+    interactor?.fetchAllTasks()
   }
 }
 
@@ -98,7 +144,27 @@ extension TasksViewController: TasksViewProtocol {
   func populateTasks(_ viewModels: [TaskViewModel]) {
     hideActivityIndicator()
     self.viewModels = viewModels
+    tableView.isHidden = false
+    noTasksView.isHidden = true
     tableView.reloadData()
+  }
+  
+  // Show no tasks for today view
+  func noTasksForToday() {
+    hideActivityIndicator()
+    
+    tableView.isHidden = true
+    
+    noTasksView.removeFromSuperview()
+    view.addSubview(noTasksView)
+    
+    // Set up constraints for noTasksView to center it in the view
+    NSLayoutConstraint.activate([
+      noTasksView.centerX.constraint(equalTo: view.centerX),
+      noTasksView.centerY.constraint(equalTo: view.centerY),
+      noTasksView.safeLeading.constraint(equalTo: view.safeLeading, constant: 20),
+      noTasksView.safeTrailing.constraint(equalTo: view.safeTrailing, constant: -20)
+    ])
   }
 }
 
