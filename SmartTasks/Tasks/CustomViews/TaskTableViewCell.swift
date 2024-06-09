@@ -56,22 +56,6 @@ final class TaskTableViewCell: UITableViewCell {
     return stackView
   }()
   
-  // Spacer view to add flexible space in the layout
-  private lazy var spacer: UIView = {
-    let view = UIView()
-    view.translatesAutoresizingMaskIntoConstraints = false
-    return view
-  }()
-  
-  // Separator view with a specific background color and fixed height
-  private lazy var separatorView: UIView = {
-    let view = UIView()
-    view.translatesAutoresizingMaskIntoConstraints = false
-    view.backgroundColor = UIColor(hexString: "F6EFDE")
-    view.heightAnchor.constraint(equalToConstant: 1.0).isActive = true
-    return view
-  }()
-  
   // Custom labels for task details
   let taskTitleLabel = CustomLabel(text: "Task Title", fontSize: .medium, fontName: "HelveticaNeue-Bold")
   let dueDateLabel = CustomLabel(text: "Due date", fontSize: .medium, textColor: .systemGray)
@@ -130,14 +114,14 @@ private extension TaskTableViewCell {
     mainContainerView.addSubview(mainVerticalStackView)
     
     mainVerticalStackView.addArrangedSubview(taskTitleLabel)
-    mainVerticalStackView.addArrangedSubview(separatorView)
+    mainVerticalStackView.addArrangedSubview(UIView.customSeparatorView)
     
     dueDateStackView.addArrangedSubview(dueDateLabel)
     dueDateStackView.addArrangedSubview(dueDateValueLabel)
     
     mainVerticalStackView.addArrangedSubview(dueDateStackView)
     mainHorizontalStackView.addArrangedSubview(dueDateStackView)
-    mainHorizontalStackView.addArrangedSubview(spacer)
+    mainHorizontalStackView.addArrangedSubview(UIView.spacer)
     
     daysLeftStackView.addArrangedSubview(daysLeftLabel)
     daysLeftStackView.addArrangedSubview(daysLeftValueLabel)

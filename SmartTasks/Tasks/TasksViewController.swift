@@ -25,7 +25,7 @@ final class TasksViewController: UIViewController {
     tableView.backgroundColor = .clear
     tableView.register(TaskTableViewCell.self, forCellReuseIdentifier: TaskTableViewCell.reuseIdentifier)
     tableView.translatesAutoresizingMaskIntoConstraints = false
-    tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
     tableView.separatorStyle = .none
     return tableView
   }()
@@ -63,16 +63,15 @@ final class TasksViewController: UIViewController {
     
     navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: titleFont]
     
-    let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonTapped))
-    let forwardButton = UIBarButtonItem(image: UIImage(systemName: "chevron.right"), style: .plain, target: self, action: #selector(forwardButtonTapped))
+    let backButton = UIBarButtonItem(image: UIImage(named: "back-arrow"), style: .plain, target: self, action: #selector(backButtonTapped))
+    let forwardButton = UIBarButtonItem(image: UIImage(named: "forward-arrow"), style: .plain, target: self, action: #selector(forwardButtonTapped))
     navigationItem.leftBarButtonItem = backButton
     navigationItem.rightBarButtonItem = forwardButton
     
-    // Background Color (Yellow)
-    let yellowColor = UIColor(hexString: "FFDE61")
-    navigationController?.navigationBar.backgroundColor = yellowColor
+    // Background Color
+    navigationController?.navigationBar.backgroundColor = AppConstants.Colors.yellowBackgroundColor
     navigationController?.navigationBar.tintColor = .white
-    navigationController?.navigationBar.barTintColor = yellowColor
+    navigationController?.navigationBar.barTintColor = AppConstants.Colors.yellowBackgroundColor
     
     // Remove Separator
     navigationController?.navigationBar.shadowImage = UIImage()
@@ -93,7 +92,7 @@ final class TasksViewController: UIViewController {
   private func setupTableView() {
     view.backgroundColor = .white
     view.addSubview(tableView)
-    tableView.backgroundColor = UIColor(hexString: "FFDE61")
+    tableView.backgroundColor = AppConstants.Colors.yellowBackgroundColor
     
     NSLayoutConstraint.activate([
       tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -104,7 +103,7 @@ final class TasksViewController: UIViewController {
   }
   
   private func setupMainView() {
-    view.backgroundColor = UIColor(hexString: "FFDE61")
+    view.backgroundColor = AppConstants.Colors.yellowBackgroundColor
   }
   
   // Setup the activity indicator layout and constraints

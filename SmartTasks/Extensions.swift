@@ -120,3 +120,21 @@ extension String {
     return formatter.string(from: date)
   }
 }
+
+extension UIView {
+  
+  static var customSeparatorView: UIView = {
+    let view = UIView()
+    view.translatesAutoresizingMaskIntoConstraints = false
+    view.backgroundColor = AppConstants.Colors.separatorBackgroundColor
+    view.heightAnchor.constraint(equalToConstant: 1.0).isActive = true
+    return view
+  }()
+  
+  // Spacer view to add flexible space in the layout
+  static var spacer: UIView = {
+    let view = UIView()
+    view.translatesAutoresizingMaskIntoConstraints = false
+    return view
+  }()
+}

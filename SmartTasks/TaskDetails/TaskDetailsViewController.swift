@@ -9,12 +9,12 @@ import UIKit
 
 final class TaskDetailsViewController: UIViewController {
   
-  // Main container view with rounded corners and a white background
+  // Main container view with rounded corners and a clear background
   private lazy var mainContainerView: UIView = {
     let view = UIView()
     view.layer.cornerRadius = 5.0
     view.clipsToBounds = true
-    view.backgroundColor = .white
+    view.backgroundColor = .clear
     view.translatesAutoresizingMaskIntoConstraints = false
     return view
   }()
@@ -22,7 +22,7 @@ final class TaskDetailsViewController: UIViewController {
   // Background imageView
   private lazy var backgroundImage: UIImageView = {
     let imageView = UIImageView()
-    imageView.image = UIImage(named: "")
+    imageView.image = UIImage(named: "task_details_background")
     imageView.clipsToBounds = true
     imageView.backgroundColor = .clear
     imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -109,7 +109,6 @@ final class TaskDetailsViewController: UIViewController {
   // Load view programmatically
   override func loadView() {
     view = UIView(frame: UIScreen.main.bounds)
-    view.backgroundColor = .white
   }
   
   // Called after the view has been loaded
@@ -128,15 +127,14 @@ final class TaskDetailsViewController: UIViewController {
     
     navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: titleFont]
     
-    let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonTapped))
+    let backButton = UIBarButtonItem(image: UIImage(named: "back-arrow"), style: .plain, target: self, action: #selector(backButtonTapped))
     
     navigationItem.leftBarButtonItem = backButton
     
-    // Background Color (Yellow)
-    let yellowColor = UIColor(hexString: "FFDE61")
-    navigationController?.navigationBar.backgroundColor = yellowColor
+    // Background Color
+    navigationController?.navigationBar.backgroundColor = AppConstants.Colors.yellowBackgroundColor
     navigationController?.navigationBar.tintColor = .white
-    navigationController?.navigationBar.barTintColor = yellowColor
+    navigationController?.navigationBar.barTintColor = AppConstants.Colors.yellowBackgroundColor
     
     // Remove Separator
     navigationController?.navigationBar.shadowImage = UIImage()
@@ -149,7 +147,7 @@ final class TaskDetailsViewController: UIViewController {
   
   private func setupViews() {
     
-    view.backgroundColor = UIColor(hexString: "FFDE61")
+    view.backgroundColor = AppConstants.Colors.yellowBackgroundColor
     
     view.addSubview(mainContainerView)
     
@@ -163,25 +161,28 @@ final class TaskDetailsViewController: UIViewController {
     
     dueDateDaysLeftStackView.addArrangedSubview(dueDateLabel)
     dueDateDaysLeftStackView.addArrangedSubview(dueDateValueLabel)
-    dueDateDaysLeftStackView.addArrangedSubview(UIView()) // Spacer
+    dueDateDaysLeftStackView.addArrangedSubview(UIView())
     dueDateDaysLeftStackView.addArrangedSubview(daysLeftLabel)
     dueDateDaysLeftStackView.addArrangedSubview(daysLeftValueLabel)
     
     mainVerticalStackView.addArrangedSubview(titleDateStackView)
+    mainVerticalStackView.addArrangedSubview(UIView.customSeparatorView)
     mainVerticalStackView.addArrangedSubview(dueDateDaysLeftStackView)
+    mainVerticalStackView.addArrangedSubview(UIView.customSeparatorView)
     mainVerticalStackView.addArrangedSubview(taskDescriptionLabel)
+    mainVerticalStackView.addArrangedSubview(UIView.customSeparatorView)
     mainVerticalStackView.addArrangedSubview(taskStatusLabel)
     mainVerticalStackView.addArrangedSubview(buttonStackView)
     
     NSLayoutConstraint.activate([
-      mainContainerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0),
-      mainContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15.0),
-      mainContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15.0),
+      mainContainerView.safeTop.constraint(equalTo: view.safeTop, constant: 20.0),
+      mainContainerView.safeLeading.constraint(equalTo: view.safeLeading, constant: 15.0),
+      mainContainerView.safeTrailing.constraint(equalTo: view.safeTrailing, constant: -15.0),
       
-      mainVerticalStackView.topAnchor.constraint(equalTo: mainContainerView.topAnchor, constant: 20.0),
-      mainVerticalStackView.leadingAnchor.constraint(equalTo: mainContainerView.leadingAnchor, constant: 20.0),
-      mainVerticalStackView.trailingAnchor.constraint(equalTo: mainContainerView.trailingAnchor, constant: -20.0),
-      mainVerticalStackView.bottomAnchor.constraint(equalTo: mainContainerView.bottomAnchor, constant: -20.0),
+      mainVerticalStackView.safeTop.constraint(equalTo: mainContainerView.safeTop, constant: 50.0),
+      mainVerticalStackView.safeLeading.constraint(equalTo: mainContainerView.safeLeading, constant: 10.0),
+      mainVerticalStackView.safeTrailing.constraint(equalTo: mainContainerView.safeTrailing, constant: -10.0),
+      mainVerticalStackView.safeBottom.constraint(equalTo: mainContainerView.safeBottom, constant: -20.0),
       
       resolveButton.heightAnchor.constraint(equalToConstant: 44.0),
       cantResolveButton.heightAnchor.constraint(equalToConstant: 44.0),

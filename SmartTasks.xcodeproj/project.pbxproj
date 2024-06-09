@@ -40,6 +40,8 @@
 		BA8A75A92C15B144007A7599 /* TaskDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A75A82C15B144007A7599 /* TaskDetailsRouter.swift */; };
 		BA8A75AB2C15B289007A7599 /* TaskDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A75AA2C15B289007A7599 /* TaskDetailsInteractor.swift */; };
 		BA8A75AD2C15B3BC007A7599 /* TaskDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A75AC2C15B3BC007A7599 /* TaskDetailsPresenter.swift */; };
+		BA8A75AF2C15C9D8007A7599 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A75AE2C15C9D8007A7599 /* CustomNavigationBar.swift */; };
+		BA8A75B12C15CB18007A7599 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A75B02C15CB18007A7599 /* AppConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		BA8A75A82C15B144007A7599 /* TaskDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailsRouter.swift; sourceTree = "<group>"; };
 		BA8A75AA2C15B289007A7599 /* TaskDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailsInteractor.swift; sourceTree = "<group>"; };
 		BA8A75AC2C15B3BC007A7599 /* TaskDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailsPresenter.swift; sourceTree = "<group>"; };
+		BA8A75AE2C15C9D8007A7599 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		BA8A75B02C15CB18007A7599 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		C0DC3FF0554C3E39D9BD6850 /* Pods_SmartTasks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartTasks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0C50D403BB406F3981A0A94 /* Pods-SmartTasks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartTasks.debug.xcconfig"; path = "Target Support Files/Pods-SmartTasks/Pods-SmartTasks.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,6 +189,7 @@
 				BA02D4F52C14A2FE002C1D56 /* AppDelegate.swift */,
 				BA02D52B2C14AFC7002C1D56 /* SceneDelegate.swift */,
 				BA02D5392C14C2B4002C1D56 /* Extensions.swift */,
+				BA8A75B02C15CB18007A7599 /* AppConstants.swift */,
 				BA02D5442C14D953002C1D56 /* Network */,
 				BA02D52D2C14B93D002C1D56 /* Tasks */,
 				BA02D52E2C14B93D002C1D56 /* TaskDetails */,
@@ -274,6 +279,7 @@
 				BA02D53C2C14CA18002C1D56 /* TaskTableViewCell.swift */,
 				BA8A75982C14FB2E007A7599 /* CustomLabel.swift */,
 				BA8A759E2C1590E2007A7599 /* NoTasksTodayView.swift */,
+				BA8A75AE2C15C9D8007A7599 /* CustomNavigationBar.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -558,6 +564,7 @@
 				BA02D54B2C14EE42002C1D56 /* TasksResponse.swift in Sources */,
 				BA02D53F2C14D420002C1D56 /* TasksInteractor.swift in Sources */,
 				BA8A75A12C15AD91007A7599 /* TaskDetailsViewController.swift in Sources */,
+				BA8A75AF2C15C9D8007A7599 /* CustomNavigationBar.swift in Sources */,
 				BA02D5412C14D5FE002C1D56 /* TasksWorker.swift in Sources */,
 				BA02D4F62C14A2FE002C1D56 /* AppDelegate.swift in Sources */,
 				BA02D5462C14D960002C1D56 /* NetworkHelper.swift in Sources */,
@@ -569,6 +576,7 @@
 				BA8A75A32C15ADBB007A7599 /* TaskDetailsProtocols.swift in Sources */,
 				BA02D5432C14D8F7002C1D56 /* TasksRemoteDataSource.swift in Sources */,
 				BA02D54D2C14EE67002C1D56 /* TasksPresenter.swift in Sources */,
+				BA8A75B12C15CB18007A7599 /* AppConstants.swift in Sources */,
 				BA02D5342C14BAB2002C1D56 /* TasksProtocols.swift in Sources */,
 				BA8A75A72C15AE23007A7599 /* TaskDetailsViewModel.swift in Sources */,
 				BA8A75AD2C15B3BC007A7599 /* TaskDetailsPresenter.swift in Sources */,
