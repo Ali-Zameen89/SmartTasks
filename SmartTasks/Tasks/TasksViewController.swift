@@ -30,6 +30,7 @@ final class TasksViewController: UIViewController {
     return tableView
   }()
   
+  // View to display when there are no tasks
   private lazy var noTasksView: NoTasksView = {
     let view = NoTasksView()
     view.translatesAutoresizingMaskIntoConstraints = false
@@ -55,7 +56,7 @@ final class TasksViewController: UIViewController {
     setupNavigationBar()
   }
   
-  // #ALI Refactor this.
+  // Setup the navigation bar appearance and buttons
   private func setupNavigationBar() {
     let titleFont = SmartTasksUI.font(type: .bold, size: .large)
     
@@ -76,12 +77,14 @@ final class TasksViewController: UIViewController {
     navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
   }
   
-  @objc func backButtonTapped() {
+  // Action for back button tap
+  @objc private func backButtonTapped() {
     showActivityIndicator()
     interactor?.fetchTasksForDate(.previous)
   }
   
-  @objc func forwardButtonTapped() {
+  // Action for forward button tap
+  @objc private func forwardButtonTapped() {
     showActivityIndicator()
     interactor?.fetchTasksForDate(.next)
   }
@@ -93,13 +96,14 @@ final class TasksViewController: UIViewController {
     tableView.backgroundColor = SmartTasksUI.Colors.yellowBackgroundColor
     
     NSLayoutConstraint.activate([
-      tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-      tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-      tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-      tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+      tableView.safeTop.constraint(equalTo: view.safeTop),
+      tableView.safeLeading.constraint(equalTo: view.safeLeading),
+      tableView.safeTrailing.constraint(equalTo: view.safeTrailing),
+      tableView.safeBottom.constraint(equalTo: view.safeBottom)
     ])
   }
   
+  // Setup the main view's appearance
   private func setupMainView() {
     self.title = "Today"
     view.backgroundColor = SmartTasksUI.Colors.yellowBackgroundColor
@@ -111,8 +115,8 @@ final class TasksViewController: UIViewController {
     view.addSubview(activityIndicator)
     
     NSLayoutConstraint.activate([
-      activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+      activityIndicator.centerX.constraint(equalTo: view.centerX),
+      activityIndicator.centerY.constraint(equalTo: view.centerY)
     ])
   }
   
@@ -160,7 +164,6 @@ extension TasksViewController: TasksViewProtocol {
     tableView.isHidden = true
     noTasksView.isHidden = false
     
-//    noTasksView.removeFromSuperview()
     view.addSubview(noTasksView)
     
     // Set up constraints for noTasksView to center it in the view

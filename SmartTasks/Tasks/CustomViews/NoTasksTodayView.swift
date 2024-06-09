@@ -55,8 +55,8 @@ final class NoTasksView: UIView {
     
     NSLayoutConstraint.activate([
       // Center the stack view in the container view
-      containerStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-      containerStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
+      containerStackView.centerX.constraint(equalTo: centerX),
+      containerStackView.centerY.constraint(equalTo: centerY),
       
       // Set width constraints for the image view to maintain aspect ratio
       noTasksImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.6),
