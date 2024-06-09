@@ -57,8 +57,6 @@ final class TasksViewController: UIViewController {
   
   // #ALI Refactor this.
   private func setupNavigationBar() {
-    navigationItem.title = "Today"
-    
     let titleFont = SmartTasksUI.font(type: .bold, size: .large)
     
     navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: titleFont]
@@ -142,7 +140,7 @@ extension TasksViewController: TasksViewProtocol {
   // Populate table view with tasks
   func populateTasks(targetDate: String, viewModels: [TaskViewModel]) {
     hideActivityIndicator()
-    //    self.title = targetDate
+    self.title = targetDate
     self.viewModels = viewModels
     tableView.isHidden = false
     noTasksView.isHidden = true

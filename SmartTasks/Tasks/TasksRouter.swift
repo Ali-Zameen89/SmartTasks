@@ -13,7 +13,6 @@ struct TasksRouter {
 extension TasksRouter: TasksRouterProtocol {
   
   static func getTasksView() -> TasksViewProtocol? {
-    
     let tasksViewController = TasksViewController()
     
     let interactor = TasksInteractor()

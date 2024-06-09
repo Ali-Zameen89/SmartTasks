@@ -15,7 +15,7 @@ struct TasksPresenter {
   /// A date formatter for converting between string and Date representations.
   private let dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
-    formatter.dateFormat = "yyyy-MM-dd" // Initial format for parsing the due date
+    formatter.dateFormat = "yyyy-MM-dd"
     return formatter
   }()
 }
@@ -31,35 +31,24 @@ extension TasksPresenter: TasksPresenterProtocol {
       return
     }
     
-    viewModels = tasks.compactMap { TaskViewModel(task: $0) } // Remove nil viewModels
-    view?.populateTasks(targetDate: "", viewModels: viewModels)
-  }
-  
-//  func formattedTargetDate(date: Date) -> String? {
-//      dateFormatter.dateFormat = "yyyy-MM-dd" // Reset the date formatter for parsing
-//      
-//      // Ensure the due date string is valid and can be converted to a Date
-//      guard let dueDateString = date,
-//            let dueDate = dateFormatter.date(from: dueDateString) else {
-//        return nil
-//      }
-//      
-//      let calendar = Calendar.current
-//      let components = calendar.dateComponents([.day], from: Date(), to: dueDate)
-//      
-//      // Calculate days remaining and format the result
-//      if let days = components.day {
-//        if days < 0 {
-//          return "Overdue"
-//        } else if days == 0 {
-//          return "Due Today"
-//        } else {
-//          return "\(days)" // Only the number, matching the design
-//        }
-//      } else {
-//        return nil // Handle unexpected date calculation errors
-//      }
-//      return task.targetDate?.getFormattedDate()
-//    }
+    viewModels = tasks.compactMap { TaskViewModel(task: $0) }
     
+    let formattedTargetDate = formatTargetDate(selectedDate)
+    view?.populateTasks(targetDate: formattedTargetDate, viewModels: viewModels)
+  }
+}
+
+private extension TasksPresenter {
+  
+  // MARK: - Target Date Formatting
+  func formatTargetDate(_ date: Date) -> String {
+    let calendar = Calendar.current
+    
+    if calendar.isDateInToday(date) {
+      return "Today"
+    } else {
+      dateFormatter.dateFormat = "MMM dd yyyy"
+      return dateFormatter.string(from: date)
+    }
+  }
 }
