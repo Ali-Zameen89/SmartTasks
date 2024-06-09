@@ -39,11 +39,7 @@ struct TaskViewModel {
   
   /// The due date of the task, formatted as "MMM dd yyyy" (e.g., "Aug 31 2024").
   var formattedDueDate: String? {
-    guard let dueDate = task.dueDate,
-          let date = dateFormatter.date(from: dueDate) else { return nil }
-    
-    dateFormatter.dateFormat = "MMM dd yyyy"
-    return dateFormatter.string(from: date)
+    return task.dueDate?.getFormattedDate()
   }
   
   /// The number of days left until the task is due, or special strings for overdue/due today tasks.
@@ -71,5 +67,11 @@ struct TaskViewModel {
     } else {
       return nil // Handle unexpected date calculation errors
     }
+  }
+  
+  // MARK: - Getters
+  
+  var taskEntity: Task {
+    return task
   }
 }

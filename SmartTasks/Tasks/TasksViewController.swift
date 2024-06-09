@@ -191,5 +191,7 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
   // Handle row selection
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
+    
+    router?.routeToTaskDetails(viewModels[indexPath.row].taskEntity)
   }
 }

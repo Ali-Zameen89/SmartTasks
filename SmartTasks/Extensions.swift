@@ -93,3 +93,30 @@ public extension UIColor {
     self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
   }
 }
+
+extension UIApplication {
+  
+  func getRootNavigationController() -> UINavigationController? {
+    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+       let window = windowScene.windows.first,
+       let rootNavigationController = window.rootViewController as? UINavigationController {
+      return rootNavigationController
+    }
+    return nil
+  }
+}
+
+extension String {
+  
+  func getFormattedDate() -> String? {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd"
+    
+    guard let date = formatter.date(from: self) else {
+      return nil
+    }
+    
+    formatter.dateFormat = "MMM dd yyyy"
+    return formatter.string(from: date)
+  }
+}

@@ -9,6 +9,7 @@ import Foundation
 
 protocol TasksRouterProtocol {
   static func getTasksView() -> TasksViewProtocol?
+  func routeToTaskDetails(_ task: Task)
 }
 
 protocol TasksViewProtocol: AnyObject {

@@ -64,12 +64,13 @@ extension TasksInteractor: TasksInteractorProtocol {
     
     // 1. Filter tasks by targetDate
     let filteredTasks = tasks.filter { task in
-      guard let targetDateString = task.targetDate,
-            let targetDate = dateFormatter.date(from: targetDateString) else {
-        return false // Exclude tasks with invalid or missing targetDate
-      }
+//      guard let targetDateString = task.targetDate,
+//            let targetDate = dateFormatter.date(from: targetDateString) else {
+//        return false // Exclude tasks with invalid or missing targetDate
+//      }
       
-      return Calendar.current.isDate(targetDate, inSameDayAs: selectedDate)
+//      return Calendar.current.isDate(targetDate, inSameDayAs: selectedDate)
+      return true
     }
     
     // 2. Pass filtered tasks to the presenter

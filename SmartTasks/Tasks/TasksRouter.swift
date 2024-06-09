@@ -5,13 +5,18 @@
 //  Created by Ali Shahid on 08/06/2024.
 //
 
-struct TasksRouter: TasksRouterProtocol {
+import UIKit
+
+struct TasksRouter {
+}
+
+extension TasksRouter: TasksRouterProtocol {
   
   static func getTasksView() -> TasksViewProtocol? {
     
     let tasksViewController = TasksViewController()
     
-    var interactor = TasksInteractor()
+    let interactor = TasksInteractor()
     var presenter = TasksPresenter()
     let router = TasksRouter()
     presenter.view = tasksViewController
@@ -20,6 +25,13 @@ struct TasksRouter: TasksRouterProtocol {
     tasksViewController.router = router
     
     return tasksViewController
+  }
+  
+  func routeToTaskDetails(_ task: Task) {
+    guard let rootNavigationController = UIApplication.shared.getRootNavigationController() else {
+      return
+    }
+    TaskDetailsRouter.routeToTaskDetails(task, from: rootNavigationController)
   }
 }
 

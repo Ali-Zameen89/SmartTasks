@@ -10,12 +10,13 @@ import UIKit
 final class CustomLabel: UILabel {
   
   enum FontSize {
-    case small, medium
+    case small, medium, large
     
     var size: CGFloat {
       switch self {
       case .small: return 10
       case .medium: return 15
+      case .large: return 20
       }
     }
   }
