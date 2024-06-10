@@ -57,6 +57,7 @@ final class TasksViewController: UIViewController {
   }
   
   // Setup the navigation bar appearance and buttons
+  // Wanted to make a separate component for Navigation bar as well. Couldn't do as per time constraint.
   private func setupNavigationBar() {
     let titleFont = SmartTasksUI.font(type: .bold, size: .large)
     

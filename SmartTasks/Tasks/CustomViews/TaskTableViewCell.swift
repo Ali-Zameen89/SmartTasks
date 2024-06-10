@@ -37,6 +37,8 @@ final class TaskTableViewCell: UITableViewCell {
     return stackView
   }()
   
+  // Wanted to make a separate component for dueDateStackView & daysLeftStackView since they are being used in details section as well. Couldn't do as per time constraint.
+  
   // Stack view for due date labels
   private lazy var dueDateStackView: UIStackView = {
     let stackView = UIStackView()
