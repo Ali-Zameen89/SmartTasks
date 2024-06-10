@@ -12,10 +12,10 @@ Features:
 Architecture:
 SmartTasks is built upon a modular UI foundation, using reusable UI components to create a consistent and flexible user interface. The core architecture follows the VIP (View-Interactor-Presenter) design pattern, promoting separation of concerns and testability:
 
-View: Responsible for displaying information and capturing user input.
-Interactor: Handles business logic and interacts with data models.
-Presenter: Formats data from the interactor for presentation in the view.
-Router: Manages navigation between screens.
+- View: Responsible for displaying information and capturing user input.
+- Interactor: Handles business logic and interacts with data models.
+- Presenter: Formats data from the interactor for presentation in the view.
+- Router: Manages navigation between screens.
 
 Getting Started
 Clone the repository: git clone https://your-repository-url/SmartTasks.git
