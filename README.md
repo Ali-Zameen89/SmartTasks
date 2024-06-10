@@ -24,9 +24,9 @@ Open the Xcode project.
 Build and run the app in the simulator or on a physical device.
 
 Dependencies
-UIKit: Apple's UI framework for building iOS interfaces.
-Alamofire
-SwiftyJSON
+- UIKit: Apple's UI framework for building iOS interfaces.
+- Alamofire
+- SwiftyJSON
 
 Contributing
 We welcome contributions to improve SmartTasks! Please fork the repository and submit pull requests with your enhancements or bug fixes.
