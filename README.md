@@ -1,4 +1,4 @@
-SmartTasks: A Modular and Clean iOS Task Management App.
+**SmartTasks: A Modular and Clean iOS Task Management App.**
 
 SmartTasks is an iOS app designed to help users manage their daily tasks efficiently. The app leverages a modular UI architecture, based on reusable UI components, and follows the VIP (View-Interactor-Presenter) or clean architecture principles.
 
